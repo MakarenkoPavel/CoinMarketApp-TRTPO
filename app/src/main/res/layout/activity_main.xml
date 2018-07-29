@@ -81,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingLeft="15dp"
+            android:gravity="center"
             android:text="@string/header_first"
             android:textColor="@color/textview_text" />
 
@@ -90,15 +90,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/header_second"
+            android:gravity="center"
             android:textColor="@color/textview_text" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/header_third"
-            android:textColor="@color/textview_text" />
     </LinearLayout>
 
     <android.support.v4.widget.SwipeRefreshLayout

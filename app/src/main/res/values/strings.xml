@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="header_first">Coin</string>
+    <string name="header_second">Price</string>
+    <string name="header_third">Chart</string>
+
+    <string name="logo_text">CoinMarket</string>
+    <string name="edit_logo_text">Setup coins</string>
+</resources>

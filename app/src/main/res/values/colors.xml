@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="year">#999999</color>
+    <color name="title">#222222</color>
+
+    <color name="coin_title_color">#222222</color>
+    <color name="coin_subtitle_color">#ffa000</color>
+
+    <color name="colorPrimaryText">#7c4dff</color>
+    <color name="textview_back">#e0e0e0</color>
+    <color name="textview_text">#757575</color>
+</resources>

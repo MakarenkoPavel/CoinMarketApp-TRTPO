@@ -34,6 +34,7 @@ public class CoinDatabaseManager extends SQLiteOpenHelper {
     private static final String NAME = "NAME";
     private static final String SYMBOL = "SYMBOL";
     private static final String PRICE = "PRICE";
+    private static final String ICON_URL = "ICON_URL";
     private static final String IS_FAVORITE = "IS_FAVORITE";
 
     private static final String TRUE = "true";
@@ -45,7 +46,24 @@ public class CoinDatabaseManager extends SQLiteOpenHelper {
         private String name;
         private String symbol;
         private String price;
+        private String icon_url;
         private boolean is_favorite;
+
+        public DatabaseCoin(int id, String name, String symbol, String price, String icon_url, boolean is_favorite) {
+            this.id = id;
+            this.name = name;
+            this.symbol = symbol;
+            this.price = price;
+            this.icon_url = icon_url;
+            this.is_favorite = is_favorite;
+        }
+
+        public DatabaseCoin(int id, String name, String symbol, String price) {
+            this.id = id;
+            this.name = name;
+            this.symbol = symbol;
+            this.price = price;
+        }
 
         public DatabaseCoin(int id, String name, String symbol, String price, boolean is_favorite) {
             this.id = id;
@@ -53,6 +71,7 @@ public class CoinDatabaseManager extends SQLiteOpenHelper {
             this.symbol = symbol;
             this.price = price;
             this.is_favorite = is_favorite;
+            this.is_favorite = false;
         }
 
         public int getId() {
@@ -65,6 +84,14 @@ public class CoinDatabaseManager extends SQLiteOpenHelper {
 
         public String getName() {
             return name;
+        }
+
+        public String getIcon_url() {
+            return icon_url;
+        }
+
+        public void setIcon_url(String icon_url) {
+            this.icon_url = icon_url;
         }
 
         public void setName(String name) {
@@ -107,6 +134,7 @@ public class CoinDatabaseManager extends SQLiteOpenHelper {
                     " NAME TEXT," +
                     " SYMBOL TEXT," +
                     " PRICE TEXT," +
+                    " ICON_URL TEXT," +
                     " IS_FAVORITE INTEGER)");
     }
 
@@ -114,6 +142,19 @@ public class CoinDatabaseManager extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(sqLiteDatabase);
+    }
+
+    public boolean insertCoin(int id, String name, String symbol, String price, String iconUrl, boolean isFavorite) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(ID, id);
+        contentValues.put(NAME, name);
+        contentValues.put(SYMBOL, symbol);
+        contentValues.put(PRICE, price);
+        contentValues.put(ICON_URL, iconUrl);
+        contentValues.put(IS_FAVORITE, isFavorite ? 1 : 0);
+
+        return sqLiteDatabase.insert(TABLE_NAME, null, contentValues) != -1;
     }
 
     public boolean insertCoin(int id, String name, String symbol, String price, boolean isFavorite) {
@@ -138,6 +179,19 @@ public class CoinDatabaseManager extends SQLiteOpenHelper {
         contentValues.put(IS_FAVORITE, 0);
 
         return sqLiteDatabase.insert(TABLE_NAME, null, contentValues) != -1;
+    }
+
+    public void updateCoin(String id,String name,String symbol, String price, String iconUrl, boolean isFavorite) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(ID, id);
+        contentValues.put(NAME, name);
+        contentValues.put(SYMBOL, symbol);
+        contentValues.put(PRICE, price);
+        contentValues.put(ICON_URL, iconUrl);
+        contentValues.put(IS_FAVORITE, isFavorite ? 1 : 0);
+
+        sqLiteDatabase.update(TABLE_NAME, contentValues, "ID = ?",new String[] { id });
     }
 
     public void updateCoin(String id,String name,String symbol, String price, boolean isFavorite) {
@@ -167,11 +221,12 @@ public class CoinDatabaseManager extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 DatabaseCoin coin = new DatabaseCoin(
-                        Integer.parseInt(cursor.getString(0)),
-                        cursor.getString(1),
-                        cursor.getString(2),
-                        cursor.getString(3),
-                        cursor.getInt(4) > 0);
+                        Integer.parseInt(cursor.getString(0)),  // id
+                        cursor.getString(1),                    // name
+                        cursor.getString(2),                    // symbol
+                        cursor.getString(3),                    // price
+                        cursor.getString(4),                    // icon url
+                        cursor.getInt(5) > 0);        // favorite
 
                 coinList.add(coin);
             } while (cursor.moveToNext());
@@ -194,7 +249,8 @@ public class CoinDatabaseManager extends SQLiteOpenHelper {
                         cursor.getString(1),
                         cursor.getString(2),
                         cursor.getString(3),
-                        Boolean.parseBoolean(cursor.getString(4)));
+                        cursor.getString(4),
+                        Boolean.parseBoolean(cursor.getString(5)));
 
                 coinList.add(coin);
             } while (cursor.moveToNext());

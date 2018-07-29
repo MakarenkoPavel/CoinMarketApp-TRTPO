@@ -50,14 +50,12 @@ public class SetupCoinViewAdapter extends RecyclerView.Adapter<SetupCoinViewAdap
                                              boolean isChecked) {
                     if (isChecked) {
                         Log.d("status", "checked");
-                        Log.d("id", "id: " + id);
                         Log.d("name", "name: " + name.getText());
 
                         coinDatabaseManager.makeCoinFavorite(id);
                     }
                     else {
                         Log.d("status", "unchecked");
-                        Log.d("id", "id: " + id);
                         Log.d("name", "name: " + name.getText());
 
                         coinDatabaseManager.unmakeCoinFavorite(id);
@@ -86,7 +84,7 @@ public class SetupCoinViewAdapter extends RecyclerView.Adapter<SetupCoinViewAdap
         holder.id = coin.getId();
         holder.name.setText(coin.getName());
         holder.coinSelection.setChecked(coin.isIs_favorite());
-        Picasso.get().load("https://www.cryptocompare.com/media/19633/btc.png" ).into(holder.icon);
+        Picasso.get().load(coin.getIcon_url()).into(holder.icon);
     }
 
     @Override

@@ -55,7 +55,7 @@ public class CoinDatabaseViewAdapter extends RecyclerView.Adapter<CoinDatabaseVi
         holder.name.setText(coin.getName());
         holder.symbol.setText(coin.getSymbol());
         holder.price.setText("$ " + coin.getPrice());
-        Picasso.get().load("https://www.cryptocompare.com/media/19633/btc.png" ).into(holder.image);
+        Picasso.get().load(coin.getIcon_url()).into(holder.image);
     }
 
     @Override

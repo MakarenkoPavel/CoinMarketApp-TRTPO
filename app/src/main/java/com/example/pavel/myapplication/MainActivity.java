@@ -86,14 +86,28 @@ public class MainActivity extends AppCompatActivity {
 
     private void prepareDatabase() {
 
-        coinDatabaseManager.insertCoin(1, "Bitcoin", "BTC", "0", true);
-        coinDatabaseManager.insertCoin(1, "Litecoin", "LTC", "0", true);
-        coinDatabaseManager.insertCoin(52, "XRP", "XRP", "0", true);
-        coinDatabaseManager.insertCoin(66, "Nxt", "NXT", "0", true);
-        coinDatabaseManager.insertCoin(74, "Dogecoin", "DOGE", "0", true);
-        coinDatabaseManager.insertCoin(109, "DigiByte", "DGB", "0", false);
-        coinDatabaseManager.insertCoin(118, "ReddCoin", "RDD", "0", false);
-        coinDatabaseManager.insertCoin(131, "Dash", "DASH", "0", false);
+        coinDatabaseManager.insertCoin(1, "Bitcoin", "BTC", "0",
+                "https://www.cryptocompare.com/media/19633/btc.png", true);
+        coinDatabaseManager.insertCoin(2, "Litecoin", "LTC", "0",
+                "https://www.cryptocompare.com/media/19782/litecoin-logo.png", true);
+        coinDatabaseManager.insertCoin(52, "XRP", "XRP", "0",
+                "https://www.cryptocompare.com/media/34477776/xrp.png", true);
+        coinDatabaseManager.insertCoin(66, "Nxt", "NXT", "0",
+                "https://www.cryptocompare.com/media/20627/nxt.png", true);
+        coinDatabaseManager.insertCoin(74, "Dogecoin", "DOGE", "0",
+                "https://www.cryptocompare.com/media/19684/doge.png", false);
+        coinDatabaseManager.insertCoin(109, "DigiByte", "DGB", "0",
+                "https://www.cryptocompare.com/media/12318264/7638-nty_400x400.jpg", false);
+        coinDatabaseManager.insertCoin(118, "ReddCoin", "RDD", "0",
+                "https://www.cryptocompare.com/media/19887/rdd.png", false);
+        coinDatabaseManager.insertCoin(131, "Dash", "DASH", "0",
+                "https://www.cryptocompare.com/media/33842920/dash.png", false);
+        coinDatabaseManager.insertCoin(213, "MonaCoin", "MONA", "0",
+                "https://www.cryptocompare.com/media/19801/mona.png", false);
+        coinDatabaseManager.insertCoin(328, "Monero", "XMR", "0",
+                "https://www.cryptocompare.com/media/19969/xmr.png", false);
+        coinDatabaseManager.insertCoin(372, "Bytecoin", "BCN", "0",
+                "https://www.cryptocompare.com/media/19632/bte.png", false);
     }
 
     public void editBtnClick(View view) {

@@ -1,4 +1,4 @@
-package com.example.pavel.myapplication.database;
+package com.example.pavel.myapplication;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.pavel.myapplication.R;
+import com.example.pavel.myapplication.database.CoinDatabaseManager;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

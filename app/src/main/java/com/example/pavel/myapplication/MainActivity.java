@@ -9,6 +9,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 
 import com.example.pavel.myapplication.database.*;
@@ -97,6 +98,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void editBtnClick(View view) {
         Intent intent = new Intent(this, EditCoinListActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent, 0);
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.d("result", "FINISH");
+
+        setupRecyclerView();
+    }
+
 }

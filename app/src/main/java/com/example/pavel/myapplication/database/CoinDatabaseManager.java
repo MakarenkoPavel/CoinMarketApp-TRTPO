@@ -208,9 +208,19 @@ public class CoinDatabaseManager extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("UPDATE " + TABLE_NAME + " SET " + IS_FAVORITE + " = 1 WHERE ID = " + coin.getId());
     }
 
+    public void makeCoinFavorite(int coinId) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        sqLiteDatabase.execSQL("UPDATE " + TABLE_NAME + " SET " + IS_FAVORITE + " = 1 WHERE ID = " + coinId);
+    }
+
     public void unmakeCoinFavorite(DatabaseCoin coin) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         sqLiteDatabase.execSQL("UPDATE " + TABLE_NAME + " SET " + IS_FAVORITE + " = 0 WHERE ID = " + coin.getId());
+    }
+
+    public void unmakeCoinFavorite(int coinId) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        sqLiteDatabase.execSQL("UPDATE " + TABLE_NAME + " SET " + IS_FAVORITE + " = 0 WHERE ID = " + coinId);
     }
 
     public void deleteAllCoins() {

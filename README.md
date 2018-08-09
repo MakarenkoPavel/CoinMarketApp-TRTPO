@@ -11,5 +11,5 @@ Application that track cryptocurrency coin price, based on CoinMarketCap free AP
 </p>
 <p align="center"> 
 <img src="https://github.com/b00m-b00m/CoinMarketApp/blob/master/Screenshot_2018-08-08-17-35-10-029_com.example.pavel.myapplication.png" 
-    height="400" width="250" >
+    height="450" width="250" >
 </p>

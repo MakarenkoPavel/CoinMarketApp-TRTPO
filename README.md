@@ -1,5 +1,5 @@
 # CoinMarketApp
-Application that track cryptocurrency coin price, based on CoinMarketCap free API on server side and Retrofit library on the client
+Application that track cryptocurrency coin price, based on CoinMarketCap free API
 ## Dependencies 
 * CoinMarketCap API
 * Retrofit

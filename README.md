@@ -25,5 +25,5 @@
 ##### 2.4 Assumptions and Dependencies
 
 #### 3 System Requirements
-
+Android 5.0.x (Lollipop 21 API level) is required or higher versions of Android
 

@@ -18,6 +18,8 @@
 #### 2 User Requirements
 ##### 2.1 Software Interfaces
 ##### 2.2 User Interfaces
+##### Application main window after preloading
+![alt text](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/MainWindow.PNG "Application main window")
 ##### 2.3 User Characteristics
 ##### 2.4 Assumptions and Dependencies
 

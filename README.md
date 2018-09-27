@@ -20,6 +20,8 @@
 ##### 2.2 User Interfaces
 ##### Application main window after preloading
 ![alt text](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/MainWindow.PNG "Application main window")
+![alt text](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/SetupCoinsWindow.PNG "Setup coins window")
+![alt text](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/CoinsChartsWindow.PNG "Coins chart window")
 ##### 2.3 User Characteristics
 ##### 2.4 Assumptions and Dependencies
 

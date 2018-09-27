@@ -8,15 +8,14 @@
 - See **detailed coin overview** and **coin markets** (cryptocurrency exchanges)
 - View **interactive charts** of coin price for different time ranges agains either popular currencies of Bitcoin
 
+#### 2 User Requirements
+##### 2.1 Software Interfaces
 **Develupment tools and Technologies:**
 - **Android Studio** as comfortable IDE for android development
 - **CoinMarketCap** Web API that gives access to all required data
 - **Retrofit** REST Client for Java and Android that makes easy to retrieve and upload JSON (or other structured data) via a REST based webservice 
 - **SQLite** database for storing historical coins state
 - **Picasso** powerful image downloading and caching library for Android
-
-#### 2 User Requirements
-##### 2.1 Software Interfaces
 ##### 2.2 User Interfaces
 ##### Application main window after preloading
 ![alt text](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/MainWindow.PNG "Application main window")

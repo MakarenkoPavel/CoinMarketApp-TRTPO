@@ -17,7 +17,7 @@
 - **SQLite** database for storing historical coins state
 - **Picasso** powerful image downloading and caching library for Android
 ##### 2.2 User Interfaces
-##### Application main window after preloading
+Application main window after preloading looks lote **CoinMarket** window. User can get accses to **SetupCoins** window wia edit button from initial window where he can setup favourite coins list. When user press chart button on initial window **CoinsCnart** window will opens where there is detailed info about coins selected from the favorits coins from initial window.
 ![alt text](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/Documents/mockups/CoinMarket.PNG "Application main window")
 ![alt text](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/Documents/mockups/SetupCoins.PNG "Setup coins window")
 ![alt text](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/Documents/mockups/CoinCharts.PNG "Coins chart window")

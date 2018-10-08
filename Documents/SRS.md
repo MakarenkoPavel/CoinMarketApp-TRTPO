@@ -25,4 +25,13 @@ Application main window after preloading looks lote **CoinMarket** window. User 
 This application is designed for those cryptocurrency traders who always wants to be up to date about cryptocurrency price changes, get flexibility of setting up favorite coin list and get comfortable way of representing historical coin data
 #### 3 System Requirements
 Android 5.0.x (Lollipop 21 API level) is required or higher versions of Android
+##### 3.1 Functional Requirements
+Application is consists of three things:
+- initial window provides view of all coins marked as favorites, user can get update by scroll down. Toolbar consists of chart and edit buttons.
+- edit window where user can setup all favorite coins radio button and back button.
+- chart window consists of historical coins chart and scrollable line of selection coins to be charted.
+##### 3.1 Non-Functional Requirements
+- All application windows should follow common UI design. Mainly white and gray colors
+- Error handling with providing of message or trying to recovery working state
+##### 3.1.1 SOFTWARE QUALITY ATTRIBUTES
 

@@ -18,9 +18,9 @@
 - **Picasso** powerful image downloading and caching library for Android
 ##### 2.2 User Interfaces
 ##### Application main window after preloading
-![alt text](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/Documents/mockups/MainWindow.PNG "Application main window")
-![alt text](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/Documents/mockups/SetupCoinsWindow.PNG "Setup coins window")
-![alt text](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/Documents/mockups/CoinsChartsWindow.PNG "Coins chart window")
+![alt text](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/Documents/mockups/CoinMarket.PNG "Application main window")
+![alt text](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/Documents/mockups/SetupCoins.PNG "Setup coins window")
+![alt text](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/Documents/mockups/CoinCharts.PNG "Coins chart window")
 ##### 2.3 User Characteristics
 ##### 2.4 Assumptions and Dependencies
 

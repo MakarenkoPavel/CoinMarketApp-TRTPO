@@ -29,6 +29,7 @@ Application is consists of three things:
 - initial window provides view of all coins marked as favorites, user can get update by scroll down. Toolbar consists of chart and edit buttons.
 - edit window where user can setup all favorite coins radio button and back button.
 - chart window consists of historical coins chart and scrollable line of selection coins to be charted. Provide date of a last database update and selection of time period and back button.
+- user can get access to data given from the last update because it stored at local database
 ##### 3.1 Non-Functional Requirements
 ##### 3.1.1 SOFTWARE QUALITY ATTRIBUTES
 - **Usability**. All application windows should follow common UI design. Mainly white and gray colors at background

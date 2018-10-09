@@ -5,7 +5,6 @@
 #### **Main Features:**
 - Monitor **all polular coins** such as Bitcoin, Etherium, Ripple, IOTA and more
 - Add coins you like to **Favorites** and to see coin price quickly
-- See **detailed coin overview** and **coin markets** (cryptocurrency exchanges)
 - View **interactive charts** of coin price for different time ranges agains either popular currencies of Bitcoin
 
 #### 2 User Requirements

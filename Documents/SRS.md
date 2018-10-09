@@ -31,7 +31,7 @@ Application is consists of three things:
 - edit window where user can setup all favorite coins radio button and back button.
 - chart window consists of historical coins chart and scrollable line of selection coins to be charted. Provide date of a last database update and selection of time period and back button.
 ##### 3.1 Non-Functional Requirements
-- All application windows should follow common UI design. Mainly white and gray colors
-- Error handling with providing of message or trying to recovery working state
+- **Usability**. All application windows should follow common UI design. Mainly white and gray colors at background
+- **Reliability**. Error handling with providing of message or trying to recovery working state. Application user will be limited in their actions
 ##### 3.1.1 SOFTWARE QUALITY ATTRIBUTES
 

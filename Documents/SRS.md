@@ -15,6 +15,7 @@
 - **Retrofit** REST Client for Java and Android that makes easy to retrieve and upload JSON (or other structured data) via a REST based webservice 
 - **SQLite** database for storing historical coins state
 - **Picasso** powerful image downloading and caching library for Android
+- **MPAndroidChart** A powerful Android chart view / graph view library
 ##### 2.2 User Interfaces
 Application main window after preloading looks lote **CoinMarket** window. User can get accses to **SetupCoins** window wia edit button from initial window where he can setup favourite coins list. When user press chart button on initial window **CoinsCnart** window will opens where there is detailed info about coins selected from the favorits coins from initial window.
 ![alt text](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/Documents/mockups/CoinMarket.PNG "Application main window")
@@ -30,7 +31,6 @@ Application is consists of three things:
 - edit window where user can setup all favorite coins radio button and back button.
 - chart window consists of historical coins chart and scrollable line of selection coins to be charted. Provide date of a last database update and selection of time period and back button.
 - user can get access to data given from the last update because it stored at a local database this means there is no need to be connected to ethernet. 
--
 ##### 3.1 Non-Functional Requirements
 ##### 3.1.1 SOFTWARE QUALITY ATTRIBUTES
 - **Usability**. All application windows should follow common UI design. Mainly white and gray colors at background

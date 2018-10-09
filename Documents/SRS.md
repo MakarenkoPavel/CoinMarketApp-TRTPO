@@ -29,7 +29,7 @@ Android 5.0.x (Lollipop 21 API level) is required or higher versions of Android
 Application is consists of three things:
 - initial window provides view of all coins marked as favorites, user can get update by scroll down. Toolbar consists of chart and edit buttons.
 - edit window where user can setup all favorite coins radio button and back button.
-- chart window consists of historical coins chart and scrollable line of selection coins to be charted.
+- chart window consists of historical coins chart and scrollable line of selection coins to be charted. Provide date of a last database update and selection of time period.
 ##### 3.1 Non-Functional Requirements
 - All application windows should follow common UI design. Mainly white and gray colors
 - Error handling with providing of message or trying to recovery working state

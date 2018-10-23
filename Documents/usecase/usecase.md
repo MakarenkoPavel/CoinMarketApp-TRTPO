@@ -25,7 +25,7 @@
 2. Application make request to local database
 3. Data from database will be shown in list view
 
-## 2.3 Show datailed coins charts
+## 2.4 Show datailed coins charts
 1. Starts when user press chart button from main window
 2. Application make request to local database
 3. Data from database will be shown in specific chart view

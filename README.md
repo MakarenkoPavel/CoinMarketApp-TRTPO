@@ -3,7 +3,7 @@
 **CoinMarketApp** a cryptocurrency tracker.
 ##### **Requirments** ([EN](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/Documents/SRS.md))
 ##### **Flow of events** ([EN](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/Documents/usecase/usecase.md))
-##### **Activity charts** ([EN](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/tree/master/Documents/activity))
+##### **Activity charts** ([EN](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/Documents/activity/activity.md))
 ##### **Sequence diagrams** ([EN](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/Documents/sequence/sequence.md))
 
 

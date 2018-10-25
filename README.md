@@ -5,5 +5,8 @@
 ##### **Flow of events** ([EN](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/Documents/usecase/usecase.md))
 ##### **Activity charts** ([EN](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/Documents/activity/activity.md))
 ##### **Sequence diagrams** ([EN](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/Documents/sequence/sequence.md))
+##### **State diagrams** ([EN]())
+##### **Class diagram** ([EN]())
+##### **Deployment diagram** ([EN]())
 
 

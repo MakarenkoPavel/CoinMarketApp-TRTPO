@@ -61,7 +61,7 @@
                 android:layout_width="?attr/actionBarSize"
                 android:layout_height="?attr/actionBarSize"
                 android:background="#F5F5F5"
-                android:onClick="editBtnClick"
+                android:onClick="chartBtnClick"
                 app:srcCompat="@drawable/ic_action_chart" />
 
             <ImageButton

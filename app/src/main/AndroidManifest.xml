@@ -19,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".setupcoinsactivity.EditCoinListActivity"></activity>
+        <activity android:name=".setupcoinsactivity.EditCoinListActivity" />
+        <activity android:name=".activityChartCoin"></activity>
     </application>
 
 </manifest>

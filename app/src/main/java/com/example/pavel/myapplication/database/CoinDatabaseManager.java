@@ -6,9 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-import android.widget.Toast;
 
-import com.example.pavel.myapplication.clientapi.CoinMarketAPI.CoinListResponse;
 import com.example.pavel.myapplication.clientapi.CoinMarketAPI.CoinMarketAPI;
 import com.example.pavel.myapplication.clientapi.CoinMarketAPI.CoinMarketService;
 import com.example.pavel.myapplication.clientapi.CoinMarketAPI.TickerResponse;
@@ -28,7 +26,8 @@ public class CoinDatabaseManager extends SQLiteOpenHelper {
 
     private static final int VERSION = 1;
     private static final String DATABASE_NAME = "Coin.db";
-    private static final String TABLE_NAME = "coin_table";
+    private static final String COIN_TABLE = "coin_table";
+    private static final String CHART_TABLE = "chart_table";
 
     private static final String ID = "ID";
     private static final String NAME = "NAME";
@@ -129,7 +128,7 @@ public class CoinDatabaseManager extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_NAME +
+        sqLiteDatabase.execSQL("CREATE TABLE " + COIN_TABLE +
                     " (ID INTEGER PRIMARY KEY," +
                     " NAME TEXT," +
                     " SYMBOL TEXT," +
@@ -140,7 +139,7 @@ public class CoinDatabaseManager extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + COIN_TABLE);
         onCreate(sqLiteDatabase);
     }
 
@@ -154,7 +153,7 @@ public class CoinDatabaseManager extends SQLiteOpenHelper {
         contentValues.put(ICON_URL, iconUrl);
         contentValues.put(IS_FAVORITE, isFavorite ? 1 : 0);
 
-        return sqLiteDatabase.insert(TABLE_NAME, null, contentValues) != -1;
+        return sqLiteDatabase.insert(COIN_TABLE, null, contentValues) != -1;
     }
 
     public boolean insertCoin(int id, String name, String symbol, String price, boolean isFavorite) {
@@ -166,7 +165,7 @@ public class CoinDatabaseManager extends SQLiteOpenHelper {
         contentValues.put(PRICE, price);
         contentValues.put(IS_FAVORITE, isFavorite ? 1 : 0);
 
-        return sqLiteDatabase.insert(TABLE_NAME, null, contentValues) != -1;
+        return sqLiteDatabase.insert(COIN_TABLE, null, contentValues) != -1;
     }
 
     public boolean insertCoin(int id, String name, String symbol, String price) {
@@ -178,7 +177,7 @@ public class CoinDatabaseManager extends SQLiteOpenHelper {
         contentValues.put(PRICE, price);
         contentValues.put(IS_FAVORITE, 0);
 
-        return sqLiteDatabase.insert(TABLE_NAME, null, contentValues) != -1;
+        return sqLiteDatabase.insert(COIN_TABLE, null, contentValues) != -1;
     }
 
     public void updateCoin(String id,String name,String symbol, String price, String iconUrl, boolean isFavorite) {
@@ -191,7 +190,7 @@ public class CoinDatabaseManager extends SQLiteOpenHelper {
         contentValues.put(ICON_URL, iconUrl);
         contentValues.put(IS_FAVORITE, isFavorite ? 1 : 0);
 
-        sqLiteDatabase.update(TABLE_NAME, contentValues, "ID = ?",new String[] { id });
+        sqLiteDatabase.update(COIN_TABLE, contentValues, "ID = ?",new String[] { id });
     }
 
     public void updateCoin(String id,String name,String symbol, String price, boolean isFavorite) {
@@ -203,18 +202,18 @@ public class CoinDatabaseManager extends SQLiteOpenHelper {
         contentValues.put(PRICE, price);
         contentValues.put(IS_FAVORITE, isFavorite ? 1 : 0);
 
-        sqLiteDatabase.update(TABLE_NAME, contentValues, "ID = ?",new String[] { id });
+        sqLiteDatabase.update(COIN_TABLE, contentValues, "ID = ?",new String[] { id });
     }
 
     public Integer deleteCoin(String id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete(TABLE_NAME, "ID = ?",new String[] {id});
+        return db.delete(COIN_TABLE, "ID = ?",new String[] {id});
     }
 
     public List<DatabaseCoin> getAllCoins() {
         List<DatabaseCoin> coinList = new ArrayList<>();
 
-        String selectQuery = "SELECT * FROM " + TABLE_NAME;
+        String selectQuery = "SELECT * FROM " + COIN_TABLE;
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery(selectQuery, null);
 
@@ -240,7 +239,7 @@ public class CoinDatabaseManager extends SQLiteOpenHelper {
         List<DatabaseCoin> coinList = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery(
-                "SELECT * FROM " + TABLE_NAME + " WHERE " + IS_FAVORITE + " = 1", null);
+                "SELECT * FROM " + COIN_TABLE + " WHERE " + IS_FAVORITE + " = 1", null);
 
         if (cursor.moveToFirst()) {
             do {
@@ -261,27 +260,27 @@ public class CoinDatabaseManager extends SQLiteOpenHelper {
 
     public void makeCoinFavorite(DatabaseCoin coin) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        sqLiteDatabase.execSQL("UPDATE " + TABLE_NAME + " SET " + IS_FAVORITE + " = 1 WHERE ID = " + coin.getId());
+        sqLiteDatabase.execSQL("UPDATE " + COIN_TABLE + " SET " + IS_FAVORITE + " = 1 WHERE ID = " + coin.getId());
     }
 
     public void makeCoinFavorite(int coinId) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        sqLiteDatabase.execSQL("UPDATE " + TABLE_NAME + " SET " + IS_FAVORITE + " = 1 WHERE ID = " + coinId);
+        sqLiteDatabase.execSQL("UPDATE " + COIN_TABLE + " SET " + IS_FAVORITE + " = 1 WHERE ID = " + coinId);
     }
 
     public void unmakeCoinFavorite(DatabaseCoin coin) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        sqLiteDatabase.execSQL("UPDATE " + TABLE_NAME + " SET " + IS_FAVORITE + " = 0 WHERE ID = " + coin.getId());
+        sqLiteDatabase.execSQL("UPDATE " + COIN_TABLE + " SET " + IS_FAVORITE + " = 0 WHERE ID = " + coin.getId());
     }
 
     public void unmakeCoinFavorite(int coinId) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        sqLiteDatabase.execSQL("UPDATE " + TABLE_NAME + " SET " + IS_FAVORITE + " = 0 WHERE ID = " + coinId);
+        sqLiteDatabase.execSQL("UPDATE " + COIN_TABLE + " SET " + IS_FAVORITE + " = 0 WHERE ID = " + coinId);
     }
 
     public void deleteAllCoins() {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        sqLiteDatabase.delete(TABLE_NAME, null, null);
+        sqLiteDatabase.delete(COIN_TABLE, null, null);
     }
 
     public void updateCoinPrice(int id, String price) {
@@ -289,12 +288,12 @@ public class CoinDatabaseManager extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(ID, id);
         values.put(PRICE, price);
-        sqLiteDatabase.update(TABLE_NAME, values, ID + "=" + id, null);
+        sqLiteDatabase.update(COIN_TABLE, values, ID + "=" + id, null);
     }
 
     public int getCoinCount() {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + COIN_TABLE, null);
         int count = cursor.getCount();
         cursor.close();
         return count;
@@ -302,7 +301,7 @@ public class CoinDatabaseManager extends SQLiteOpenHelper {
 
     public void updateDatabase() {
 
-        String selectQuery = "SELECT * FROM " + TABLE_NAME;
+        String selectQuery = "SELECT * FROM " + COIN_TABLE;
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery(selectQuery, null);
 

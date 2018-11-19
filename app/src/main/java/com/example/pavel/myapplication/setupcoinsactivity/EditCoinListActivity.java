@@ -33,7 +33,7 @@ public class EditCoinListActivity extends AppCompatActivity {
         myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // back button pressed
+
                 finish();
             }
         });

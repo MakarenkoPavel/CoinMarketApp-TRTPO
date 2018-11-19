@@ -12,11 +12,17 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 
+import com.example.pavel.myapplication.clientapi.CryptoCompareAPI.CryptoCompareAPI;
+import com.example.pavel.myapplication.clientapi.CryptoCompareAPI.CryptoCompareService;
+import com.example.pavel.myapplication.clientapi.CryptoCompareAPI.HistoricalDailyChartData;
 import com.example.pavel.myapplication.database.*;
 import com.example.pavel.myapplication.setupcoinsactivity.EditCoinListActivity;
 
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -36,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setupToolbar();
 
+        coinDatabaseManager = new CoinDatabaseManager(this);
+
         swipeRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.swipeRefresfLayout);
         swipeRefreshLayout.setColorSchemeResources(R.color.textview_text, R.color.textview_back);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -46,8 +54,6 @@ public class MainActivity extends AppCompatActivity {
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
-
-        coinDatabaseManager = new CoinDatabaseManager(this);
 
         /* Check for first time launch */
         Boolean isFirstLaunch = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
@@ -115,10 +121,14 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent, 0);
     }
 
+    public void chartBtnClick(View view) {
+        Intent intent = new Intent(this, activityChartCoin.class);
+        startActivityForResult(intent, 0);
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         Log.d("result", "FINISH");
-
         setupRecyclerView();
     }
 

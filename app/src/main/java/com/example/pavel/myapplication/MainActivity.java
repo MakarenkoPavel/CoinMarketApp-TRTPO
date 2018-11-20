@@ -1,6 +1,7 @@
 package com.example.pavel.myapplication;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +18,9 @@ import com.example.pavel.myapplication.clientapi.CryptoCompareAPI.CryptoCompareS
 import com.example.pavel.myapplication.clientapi.CryptoCompareAPI.HistoricalDailyChartData;
 import com.example.pavel.myapplication.database.*;
 import com.example.pavel.myapplication.setupcoinsactivity.EditCoinListActivity;
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
 
 import java.util.List;
 
@@ -131,5 +135,4 @@ public class MainActivity extends AppCompatActivity {
         Log.d("result", "FINISH");
         setupRecyclerView();
     }
-
 }

@@ -22,8 +22,6 @@ public class EditCoinListActivity extends AppCompatActivity {
     private SetupCoinViewAdapter viewAdapter;
     private CoinDatabaseManager coinDatabaseManager;
 
-    //private CheckBox coinSelectionCheckBox;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

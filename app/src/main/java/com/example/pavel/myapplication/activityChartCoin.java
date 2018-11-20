@@ -12,6 +12,7 @@ import com.example.pavel.myapplication.clientapi.CryptoCompareAPI.CryptoCompareS
 import com.example.pavel.myapplication.clientapi.CryptoCompareAPI.HistoricalCoinSnapshot;
 import com.example.pavel.myapplication.clientapi.CryptoCompareAPI.HistoricalDailyChartData;
 import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.helper.StaticLabelsFormatter;
 import com.jjoe64.graphview.series.BarGraphSeries;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
@@ -21,8 +22,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class activityChartCoin extends AppCompatActivity {
-
-    private HistoricalDailyChartData data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,37 +43,25 @@ public class activityChartCoin extends AppCompatActivity {
 
             @Override
             public void onResponse(Call<HistoricalDailyChartData> call, Response<HistoricalDailyChartData> response) {
+                HistoricalDailyChartData data = response.body();
 
-                data = response.body();
+                if(data != null) {
+                    GraphView graph = (GraphView) findViewById(R.id.graph);
+                    LineGraphSeries<DataPoint> series = new LineGraphSeries<>();
+
+                    for (int i = 0; i < data.chartData.size(); i++) {
+                        series.appendData(new DataPoint(i, Double.parseDouble(data.chartData.get(i).open)), true, 256);
+                    }
+
+                    series.setColor(Color.RED);
+                    graph.addSeries(series);
+                }
             }
 
             @Override
             public void onFailure(Call<HistoricalDailyChartData> call, Throwable t) {
-
                 Log.d("update status", "can not upload coin data");
             }
         });
-
-        GraphView graph = (GraphView) findViewById(R.id.graph);
-        LineGraphSeries<DataPoint> series2 = new LineGraphSeries<>();
-
-        for(int i = 0; i < data.chartData.size(); i++) {
-            series2.appendData(new DataPoint(i , i), true, 256);
-        }
-
-
-        LineGraphSeries<DataPoint> series3 = new LineGraphSeries<>(new DataPoint[] {
-                new DataPoint(0, 4),
-                new DataPoint(1, 2),
-                new DataPoint(2, 8),
-                new DataPoint(3, 9),
-                new DataPoint(4, 10)
-        });
-
-        series2.setColor(Color.GREEN);
-        series3.setColor(Color.RED);
-
-        graph.addSeries(series2);
-        graph.addSeries(series3);
     }
 }

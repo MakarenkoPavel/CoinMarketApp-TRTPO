@@ -61,33 +61,36 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/dailyBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:text="Daily"
+        android:onClick="dailyBtnClick"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/hourlyBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:text="Hourly"
+        android:onClick="hourlyBtnClick"
         app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintStart_toEndOf="@+id/button3" />
+        app:layout_constraintStart_toEndOf="@+id/dailyBtn" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/minuteBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:text="Minute"
+        android:onClick="minyteBtnClick"
         app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintStart_toEndOf="@+id/button4" />
+        app:layout_constraintStart_toEndOf="@+id/hourlyBtn" />
 
 </android.support.constraint.ConstraintLayout>

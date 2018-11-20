@@ -19,4 +19,10 @@ public interface CryptoCompareService {
 
     @GET("/data/histoday")
     Call<HistoricalDailyChartData> getHistoricalDailyChartInfo(@Query("fsym") String coin, @Query("tsym") String currency, @Query("limit") String limit);
+
+    @GET("/data/histohour")
+    Call<HistoricalDailyChartData> getHistoricalHourlyChartInfo(@Query("fsym") String coin, @Query("tsym") String currency, @Query("limit") String limit);
+
+    @GET("/data/histominute")
+    Call<HistoricalDailyChartData> getHistoricalMinuteChartInfo(@Query("fsym") String coin, @Query("tsym") String currency, @Query("limit") String limit);
 }

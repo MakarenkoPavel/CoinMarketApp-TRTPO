@@ -1,4 +1,4 @@
-package com.example.pavel.myapplication;
+package com.example.pavel.myapplication.chartactivity;
 
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -7,12 +7,14 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 
+import com.example.pavel.myapplication.R;
 import com.example.pavel.myapplication.clientapi.CryptoCompareAPI.CryptoCompareAPI;
 import com.example.pavel.myapplication.clientapi.CryptoCompareAPI.CryptoCompareService;
 import com.example.pavel.myapplication.clientapi.CryptoCompareAPI.HistoricalCoinSnapshot;
 import com.example.pavel.myapplication.clientapi.CryptoCompareAPI.HistoricalDailyChartData;
 import com.example.pavel.myapplication.database.CoinDatabaseManager;
 import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.LegendRenderer;
 import com.jjoe64.graphview.helper.StaticLabelsFormatter;
 import com.jjoe64.graphview.series.BarGraphSeries;
 import com.jjoe64.graphview.series.DataPoint;
@@ -28,6 +30,7 @@ import retrofit2.Response;
 public class activityChartCoin extends AppCompatActivity {
 
     private CoinDatabaseManager coinDatabaseManager;
+    private String cTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +48,14 @@ public class activityChartCoin extends AppCompatActivity {
 
         coinDatabaseManager = new CoinDatabaseManager(this);
         List<CoinDatabaseManager.DatabaseCoin> fCoins = coinDatabaseManager.getFavoriteCoins();
-        
-        for(CoinDatabaseManager.DatabaseCoin coin : fCoins) {
+
+        GraphView graph = (GraphView) findViewById(R.id.graph);
+        graph.removeAllSeries();
+        graph.getLegendRenderer().setVisible(true);
+//    //graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
+        graph.getLegendRenderer().setFixedPosition(800, 0);
+
+        for(final CoinDatabaseManager.DatabaseCoin coin : fCoins) {
 
             CryptoCompareService service = CryptoCompareAPI.getRetrofitInstance().create(CryptoCompareService.class);
             Call<HistoricalDailyChartData> call = service.getHistoricalDailyChartInfo(coin.getSymbol(), "USD", "10");
@@ -58,8 +67,6 @@ public class activityChartCoin extends AppCompatActivity {
 
                     if(data != null) {
                         GraphView graph = (GraphView) findViewById(R.id.graph);
-                        graph.removeAllSeries();
-
                         LineGraphSeries<DataPoint> series = new LineGraphSeries<>();
 
                         for (int i = 0; i < data.chartData.size(); i++) {
@@ -68,6 +75,7 @@ public class activityChartCoin extends AppCompatActivity {
 
                         series.setColor(getRandColor());
                         graph.addSeries(series);
+                        series.setTitle(coin.getSymbol());
                     }
                 }
 
@@ -84,7 +92,11 @@ public class activityChartCoin extends AppCompatActivity {
 
         GraphView graph = (GraphView) findViewById(R.id.graph);
         graph.removeAllSeries();
-        for(CoinDatabaseManager.DatabaseCoin coin : fCoins) {
+
+        graph.getLegendRenderer().setVisible(true);
+        graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
+
+        for(final CoinDatabaseManager.DatabaseCoin coin : fCoins) {
 
             CryptoCompareService service = CryptoCompareAPI.getRetrofitInstance().create(CryptoCompareService.class);
             Call<HistoricalDailyChartData> call = service.getHistoricalDailyChartInfo(coin.getSymbol(), "USD", "10");
@@ -104,6 +116,7 @@ public class activityChartCoin extends AppCompatActivity {
 
                         series.setColor(getRandColor());
                         graph.addSeries(series);
+                        series.setTitle(coin.getSymbol());
                     }
                 }
 
@@ -120,7 +133,11 @@ public class activityChartCoin extends AppCompatActivity {
 
         GraphView graph = (GraphView) findViewById(R.id.graph);
         graph.removeAllSeries();
-        for(CoinDatabaseManager.DatabaseCoin coin : fCoins) {
+
+        graph.getLegendRenderer().setVisible(true);
+        graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
+
+        for(final CoinDatabaseManager.DatabaseCoin coin : fCoins) {
 
             CryptoCompareService service = CryptoCompareAPI.getRetrofitInstance().create(CryptoCompareService.class);
             Call<HistoricalDailyChartData> call = service.getHistoricalHourlyChartInfo(coin.getSymbol(), "USD", "10");
@@ -140,6 +157,7 @@ public class activityChartCoin extends AppCompatActivity {
 
                         series.setColor(getRandColor());
                         graph.addSeries(series);
+                        series.setTitle(coin.getSymbol());
                     }
                 }
 
@@ -156,7 +174,11 @@ public class activityChartCoin extends AppCompatActivity {
 
         GraphView graph = (GraphView) findViewById(R.id.graph);
         graph.removeAllSeries();
-        for(CoinDatabaseManager.DatabaseCoin coin : fCoins) {
+
+        graph.getLegendRenderer().setVisible(true);
+        graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
+
+        for(final CoinDatabaseManager.DatabaseCoin coin : fCoins) {
 
             CryptoCompareService service = CryptoCompareAPI.getRetrofitInstance().create(CryptoCompareService.class);
             Call<HistoricalDailyChartData> call = service.getHistoricalMinuteChartInfo(coin.getSymbol(), "USD", "10");
@@ -176,6 +198,7 @@ public class activityChartCoin extends AppCompatActivity {
 
                         series.setColor(getRandColor());
                         graph.addSeries(series);
+                        series.setTitle(coin.getSymbol());
                     }
                 }
 

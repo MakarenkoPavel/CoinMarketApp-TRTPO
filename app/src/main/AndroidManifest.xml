@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".setupcoinsactivity.EditCoinListActivity" />
-        <activity android:name=".activityChartCoin"></activity>
+        <activity android:name=".chartactivity.activityChartCoin"></activity>
     </application>
 
 </manifest>

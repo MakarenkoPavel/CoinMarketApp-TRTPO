@@ -1,7 +1,6 @@
 package com.example.pavel.myapplication;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -13,20 +12,11 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 
-import com.example.pavel.myapplication.clientapi.CryptoCompareAPI.CryptoCompareAPI;
-import com.example.pavel.myapplication.clientapi.CryptoCompareAPI.CryptoCompareService;
-import com.example.pavel.myapplication.clientapi.CryptoCompareAPI.HistoricalDailyChartData;
+import com.example.pavel.myapplication.chartactivity.activityChartCoin;
 import com.example.pavel.myapplication.database.*;
 import com.example.pavel.myapplication.setupcoinsactivity.EditCoinListActivity;
-import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.series.DataPoint;
-import com.jjoe64.graphview.series.LineGraphSeries;
 
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 
 public class MainActivity extends AppCompatActivity {

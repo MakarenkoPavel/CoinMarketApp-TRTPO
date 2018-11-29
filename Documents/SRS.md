@@ -20,7 +20,7 @@
 Application main window after preloading looks lote **CoinMarket** window. User can get accses to **SetupCoins** window wia edit button from initial window where he can setup favourite coins list. When user press chart button on initial window **CoinsCnart** window will opens where there is detailed info about coins selected from the favorits coins from initial window.
 ![alt text](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/Documents/mockups/CoinMarket.PNG "Application main window")
 ![alt text](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/Documents/mockups/SetupCoins.PNG "Setup coins window")
-![alt text](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/Documents/mockups/CoinCharts.PNG "Coins chart window")
+![alt text](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/Documents/mockups/CoinCharts%20(1).PNG "Coins chart window")
 ##### 2.3 User Characteristics
 There is a lot of cryptocurrency trackers but not all of them can give possibility to use it without ethernet access and working with  favorites coins in simple way.
 This application is designed for those cryptocurrency traders who always wants to be up to date about cryptocurrency price changes, get flexibility of setting up favorite coin list and get comfortable way of representing historical coin data

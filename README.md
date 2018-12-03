@@ -9,5 +9,6 @@
 ##### **Class diagram** ([EN](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/Documents/class/class.md))
 ##### **Component diagram** ([EN](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/Documents/component/component.md))
 ##### **Deployment diagram** ([EN](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/Documents/deployment/deployment.md))
+##### **Test Plan** ([RU](https://github.com/b00m-b00m/CoinMarketApp-TRTPO/blob/master/Documents/TestPlan/TestPlan.md))
 
 
